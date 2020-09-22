@@ -53,7 +53,7 @@ services:
     restart: always
     logging: *default-logging
   frontend:
-    image: redpencil/frontend-food-forest
+    image: redpencil/frontend-food-forest:latest.fastboot
     environment:
       EMBER_METIS_BASE_URL: "http://food-forest.redpencil.io/"
       EMBER_YASGUI_DEFAULT_QUERY: "PREFIX voc: <http://food-forest.redpencil.io/voc/>\\nPREFIX resource: <http://food-forest.redpencil.io/resources/>\\n\\nSELECT * WHERE {\\n  ?s ?p ?o.\\n}"
@@ -75,7 +75,7 @@ services:
     labels:
       - "logging=true"
   resource-labels:
-    image: lblod/resource-label-service:dev
+    image: lblod/resource-label-service
     restart: always
     links:
       - virtuoso:database
