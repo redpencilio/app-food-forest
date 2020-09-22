@@ -1,0 +1,57 @@
+@prefix voc: <http://food-forest.redpencil.io/voc/> .
+@prefix resource: <http://food-forest.redpencil.io/resources/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+resource:ActinidiaArguta a voc:PlantVariety;
+    voc:growthForm resource:climbingPlant ;
+    voc:width "50"^^xsd:integer ;
+    voc:height "220"^^xsd:integer ;
+    voc:desiredSun resource:fullSun ;
+    rdfs:label "Hardy Kiwi"@en, "Kiwibes"@nl ;
+    rdf:seeAlso <http://en.wikipedia.org/wiki/Actinidia_arguta> .
+
+voc:PlantVariety a rdfs:Class ;
+    rdfs:label "Plant Variety"@en, "Plant Variëteit"@nl .
+
+voc:growthForm a rdf:Property ;
+    rdfs:label "Growth form"@en, "Groeivorm"@nl ;
+    rdfs:comment "The way the plant grows, eg: climbing plant"@nl ;
+    rdfs:comment "De manier waarop de plant groeit, eg: klimplant"@en .
+
+resource:climbingPlant a skos:Concept ;
+    skos:prefLabel "Climbing plant"@en, "Klimplant"@nl ;
+    skos:definition "A plant which climbs up a support structure"@en ;
+    skos:definition "Een plant die op een ondersteunende structuur klimt"@nl ;
+    skos:inScheme resource:growthForms .
+
+resource:growthForms a skos:ConceptScheme ;
+    skos:prefLabel "Collection of growth forms"@en, "Verzameling van groeivormen"@nl ;
+    skos:definition "The shape and way in which a plant grows"@en, "De manier en vorm waarin een plant groeit"@nl .
+
+voc:width a rdf:Property ;
+    rdfs:label "Width (cm)"@en, "Breedte (cm)"@nl ;
+    rdfs:comment "Width expressed as a whole number in centimeters, typed as xsd:integer."@en ;
+    rdfs:comment "Breedte uitgedrukt als een geheel getal in centimeters, getypeerd als xsd:integer."@nl .
+
+voc:height a rdf:Property ;
+    rdfs:label "Height (cm)"@en, "Hooghte (cm)"@nl ;
+    rdfs:comment "Height expressed as a whole number in centimeters, typed as xsd:integer."@en ;
+    rdfs:comment "Hoogte uitgedrukt als een geheel getal in centimeters, getypeerd als xsd:integer."@nl .
+
+voc:desiredSun a rdf:Property ;
+    rdfs:label "desired sun"@en, "zonbehoefte"@nl ;
+    rdfs:comment "Amount of sun needed to make the plant flourish"@en ;
+    rdfs:comment "Hoeveelheid zon om de plant optimaal te laten groeien"@nl .
+
+resource:fullSun a skos:Concept ;
+    skos:prefLabel "Full sunlight"@en, "Volle zon"@nl ;
+    skos:definition "Plant prefers the full open sunlight"@en ;
+    skos:definition "Plant staat liefst in de volle open zon"@nl ;
+    skos:inScheme resource:sunPreferences .
+
+resource:sunPreferences a skos:ConceptScheme ;
+    skos:prefLabel "Collection of sunlight preferences for plants"@en ;
+    skos:prefLabel "Verzameling van zonlichtvoorkeuren voor planten"@nl .

@@ -3,6 +3,7 @@
 !/data/db/virtuoso.ini
 !/data/db/toLoad
 !/data/db/toLoad/*
+!/data/db/.gitkeep
 
 docker-compose.override.yml
 
