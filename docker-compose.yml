@@ -12,8 +12,6 @@ services:
     image: semtech/mu-identifier:1.9.0
     links:
       - dispatcher:dispatcher
-    ports:
-      - "80:80"
     logging: *default-logging
     labels:
       - "logging=true"
@@ -34,8 +32,6 @@ services:
     environment:
       SPARQL_UPDATE: "true"
       DEFAULT_GRAPH: "http://mu.semte.ch/application"
-    ports:
-      - "8890:8890"
     volumes:
       - ./data/db:/data
       - ./config/virtuoso/virtuoso.ini:/data/virtuoso.ini
